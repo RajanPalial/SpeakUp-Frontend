@@ -29,7 +29,7 @@ const DashboardLayout = ({ children }) => {
     const token = localStorage.getItem("token");
     const { accessToken } = auth;
     if (!token) {
-      navigate("/login");
+      navigate("/");
     }
   }, []);
 

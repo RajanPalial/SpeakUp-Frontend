@@ -23,7 +23,7 @@ const baseurl = import.meta.env.VITE_API_BASE_URL
       if (!token) {
         console.warn("No token found");
         localStorage.clear();
-        navigate("/login");
+        navigate("/");
         return;
       }
 
@@ -45,13 +45,13 @@ const baseurl = import.meta.env.VITE_API_BASE_URL
 
       // Clear localStorage and redirect on success
       localStorage.clear();
-      navigate("/login");
+      navigate("/");
       window.location.reload();
     } catch (error) {
       console.error("Logout error:", error);
       // Still clear data and redirect even if API fails
       localStorage.clear();
-      navigate("/login");
+      navigate("/");
       window.location.reload();
     }
   };

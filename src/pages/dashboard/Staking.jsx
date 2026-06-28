@@ -27,7 +27,7 @@ const Staking = () => {
       if (!response.ok) {
         if (response.status === 401) {
           localStorage.removeItem("token");
-          navigate("/login");
+          navigate("/");
         }
         throw new Error("Network response was not ok");
       }
@@ -58,7 +58,7 @@ const Staking = () => {
         if (response.status === 401) {
         alert("INVALID TXNN.....!!!!!!!!")
           // localStorage.removeItem("token");
-          // navigate("/login");
+          // navigate("/");
         }
         throw new Error("Network response was not ok");
 
