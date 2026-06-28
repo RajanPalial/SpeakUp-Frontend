@@ -58,14 +58,7 @@ export default function AppRoutes() {
             </Suspense>
           }
         />
-        <Route
-          path="/login"
-          element={
-            <Suspense fallback={<Loader />}>
-              <Home />
-            </Suspense>
-          }
-        />
+       
         <Route
           path="/department"
           element={
