@@ -118,7 +118,7 @@ const Login = () => {
               <div className="col-12 col-md-6 order-2 order-md-1">
                 <div className="login_images_column mx-sm-4 mx-md-0 text-center pe-5 mb-md-0">
                   <img
-                    src="/public/images/auth/login-1.png"
+                    src="/images/auth/login-1.png"
                     alt="login-auth"
                     className="img-fluid"
                   />
