@@ -358,7 +358,7 @@ const AdminDashboard = () => {
   const PIE_STATUS_COLORS = {
     "New": C.amber,
     "In Progress": C.accent,
-    "Closed": C.green,
+    "Resolved": C.green,
   };
 
   const pieData = dashData?.pieChart?.map((d) => ({
@@ -371,7 +371,7 @@ const AdminDashboard = () => {
   const TICKET_STATUS = {
     1: { label: "New", color: C.amber, bg: C.amberSoft },
     2: { label: "In Progress", color: C.accent, bg: C.accentSoft },
-    3: { label: "Closed", color: C.green, bg: C.greenSoft },
+    3: { label: "Resolved", color: C.green, bg: C.greenSoft },
   };
 
   return (

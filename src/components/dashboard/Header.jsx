@@ -29,9 +29,9 @@ const baseurl = import.meta.env.VITE_API_BASE_URL
 
       // Make logout API call
       const response = await fetch(
-        `${baseurl}/api/auth/logout`,
+        `${baseurl}/auth/logout`,
         {
-          method: "DELETE",
+          method: "DELETE",-
           headers: {
             "Authorization": `Bearer ${token}`,
             "Content-Type": "application/json",

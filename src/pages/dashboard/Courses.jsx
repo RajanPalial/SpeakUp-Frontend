@@ -488,7 +488,7 @@ const Courses = () => {
                 value={course.department_id}
                 onChange={(val) => setCourse({ ...course, department_id: val })}
               />
-              {isEdit && (
+              {/* {isEdit && (
                 <div>
                   <label style={{ display: "block", marginBottom: 8, color: "#ddd", fontSize: 14 }}>Status</label>
                   <select value={course.is_active} onChange={(e) => setCourse({ ...course, is_active: Number(e.target.value) })}
@@ -497,7 +497,7 @@ const Courses = () => {
                     <option value={0}>Inactive</option>
                   </select>
                 </div>
-              )}
+              )} */}
             </div>
             <div style={{ marginTop: "auto", padding: 20, borderTop: `1px solid ${C.border}`, display: "flex", justifyContent: "flex-end", gap: 12 }}>
               <button onClick={() => { setShowDrawer(false); setIsEdit(false); }}

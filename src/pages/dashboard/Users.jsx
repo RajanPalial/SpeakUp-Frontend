@@ -768,15 +768,18 @@ const Users = () => {
               </Field>
 
               <Field label="Phone Number *">
-                <input
-                  type="tel"
-                  value={user.phone_no}
-                  onChange={(e) => setUser({ ...user, phone_no: e.target.value })}
-                  placeholder="10-digit phone number"
-                  style={inputStyle}
-                  maxLength={10}
-                />
-              </Field>
+  <input
+    type="tel"
+    value={user.phone_no}
+    onChange={(e) => {
+      const value = e.target.value.replace(/\D/g, ""); // remove non-numeric
+      setUser({ ...user, phone_no: value });
+    }}
+    placeholder="10-digit phone number"
+    style={inputStyle}
+    maxLength={10}
+  />
+</Field>
 
               <CustomDropdown
                 label="Department"
@@ -797,16 +800,24 @@ const Users = () => {
               />
 
               <Field label="Semester">
-                <input
-                  type="number"
-                  min={1}
-                  max={12}
-                  value={user.sem}
-                  onChange={(e) => setUser({ ...user, sem: e.target.value })}
-                  placeholder="e.g. 6"
-                  style={inputStyle}
-                />
-              </Field>
+  <input
+    type="number"
+    min={1}
+    max={6}
+    value={user.sem}
+    onChange={(e) => {
+      let value = Number(e.target.value);
+
+      // enforce range 1–6
+      if (value > 6) value = 6;
+      if (value < 1) value = "";
+
+      setUser({ ...user, sem: value });
+    }}
+    placeholder="e.g. 3"
+    style={inputStyle}
+  />
+</Field>
             </div>
 
             {/* Drawer Footer */}

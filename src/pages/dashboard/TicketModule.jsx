@@ -237,31 +237,75 @@ const AdminTicketList = () => {
     { label: "Resolved", value: 3, color: C.green, bg: C.greenSoft },
   ];
 
-  const updateTicketStatus = async (ticketId, newStatus) => {
-    try {
-      setStatusUpdating(ticketId);
-      const res = await axios.put(
-        "/student/update-ticket-status",
-        { id: ticketId, ticket_status: newStatus },
-        { headers }
-      );
-      if (res.data.status === 1 || res.data.status === true) {
-        // Optimistically update local state
-        setTickets((prev) =>
-          prev.map((t) => t.id === ticketId ? { ...t, status: newStatus } : t)
-        );
-      }
-    } catch (error) {
-      if (error?.response?.status === 401) {
-        localStorage.clear();
-        navigate('/')
-      }
-    } finally {
-      setStatusUpdating(null);
-      setActiveDropdown(null);
-    }
-  };
+  // const updateTicketStatus = async (ticketId, newStatus) => {
+  //   try {
+  //     setStatusUpdating(ticketId);
+  //     const res = await axios.put(
+  //       "/student/update-ticket-status",
+  //       { id: ticketId, ticket_status: newStatus },
+  //       { headers }
+  //     );
+  //     if (res.data.status === 1 || res.data.status === true) {
+  //       // Optimistically update local state
+  //       setTickets((prev) =>
+  //         prev.map((t) => t.id === ticketId ? { ...t, status: newStatus } : t)
+  //       );
+  //     }
+  //   } catch (error) {
+  //     if (error?.response?.status === 401) {
+  //       localStorage.clear();
+  //       navigate('/')
+  //     }else{
 
+  //     }
+  //   } finally {
+  //     setStatusUpdating(null);
+  //     setActiveDropdown(null);
+  //   }
+  // };
+
+  // ✅ COMPLETE updateTicketStatus with full error handling
+
+const updateTicketStatus = async (ticketId, newStatus) => {
+  try {
+    setStatusUpdating(ticketId);
+    const res = await axios.put(
+      "/student/update-ticket-status",
+      { id: ticketId, ticket_status: newStatus },
+      { headers }
+    );
+    if (res.data.status === 1 || res.data.status === true) {
+      // Optimistically update local state
+      setTickets((prev) =>
+        prev.map((t) => t.id === ticketId ? { ...t, status: newStatus } : t)
+      );
+      toast.success("Status updated successfully");
+    }
+  } catch (error) {
+    // ✅ 401 Unauthorized
+    if (error?.response?.status === 401) {
+      localStorage.clear();
+      navigate('/');
+    } 
+    // ✅ 422 Unprocessable Entity (Validation Error)
+    else if (error?.response?.status === 422) {
+      toast.error(
+        error?.response?.data?.message || 
+        "Invalid status update. Please check your input."
+      );
+    } 
+    // ✅ All other errors
+    else {
+      toast.error(
+        error?.response?.data?.message || 
+        "Failed to update status."
+      );
+    }
+  } finally {
+    setStatusUpdating(null);
+    setActiveDropdown(null);
+  }
+};
   const checkContent = async (ticket) => {
     try {
       setModerationLoading(ticket.id);
@@ -352,9 +396,9 @@ const AdminTicketList = () => {
         }}>
           <div>
             <h2 style={{ margin: 0, fontSize: 18, fontWeight: 700, color: C.text }}>🎫 All Tickets</h2>
-            <p style={{ margin: "3px 0 0", fontSize: 12, color: C.muted }}>
+            {/* <p style={{ margin: "3px 0 0", fontSize: 12, color: C.muted }}>
               {loading ? "Loading…" : `${totalRecords} ticket${totalRecords !== 1 ? "s" : ""} total`}
-            </p>
+            </p> */}
           </div>
 
           {/* Search */}
@@ -496,18 +540,31 @@ const AdminTicketList = () => {
 
                             {activeDropdown === t.id && (
                               <div
+                                // style={{
+                                //   position: "absolute",
+                                //   top: "calc(100% + 6px)",
+                                //   left: 0,
+                                //   width: "100%",
+                                //   background: C.surface,
+                                //   border: `1px solid ${C.border}`,
+                                //   borderRadius: 10,
+                                //   overflow: "hidden",
+                                //   zIndex: 100,
+                                //   boxShadow: "0 8px 24px rgba(0,0,0,.4)",
+                                // }}
                                 style={{
-                                  position: "absolute",
-                                  top: "calc(100% + 6px)",
-                                  left: 0,
-                                  width: "100%",
-                                  background: C.surface,
-                                  border: `1px solid ${C.border}`,
-                                  borderRadius: 10,
-                                  overflow: "hidden",
-                                  zIndex: 100,
-                                  boxShadow: "0 8px 24px rgba(0,0,0,.4)",
-                                }}
+      position: "absolute",
+      top: "calc(100% + 6px)",
+      left: 0,
+      right: 0,                    // ADD             // REMOVE
+      minWidth: "160px",            // REPLACE
+      background: C.surface,
+      border: `1px solid ${C.border}`,
+      borderRadius: 10,
+      overflow: "hidden",               // CHANGE
+      zIndex: 1000,
+      boxShadow: "0 10px 24px rgba(0,0,0,.5)",
+    }}
                               >
                                 {STATUS_OPTIONS.map((opt) => {
                                   const isCurrent = t.status === opt.value;
@@ -545,7 +602,7 @@ const AdminTicketList = () => {
                                       />
                                       {opt.label}
 
-                                      {isCurrent && (
+                                      {/* {isCurrent && (
                                         <span
                                           style={{
                                             marginLeft: "auto",
@@ -555,7 +612,7 @@ const AdminTicketList = () => {
                                         >
                                           ✓ Current
                                         </span>
-                                      )}
+                                      )} */}
                                     </button>
                                   );
                                 })}
