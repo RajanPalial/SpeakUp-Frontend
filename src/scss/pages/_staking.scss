@@ -1,0 +1,94 @@
+.cus_card-1 {
+    background: linear-gradient(to bottom right, rgb(41, 40, 40), rgb(68, 25, 70));
+    color: var(--white);
+    box-shadow: var(--card-shadow);
+    border-radius: 7px;
+}
+
+.staking_sec {
+    ::placeholder{
+        color: var(--grey) !important;
+    }
+    .input-group {
+        box-shadow: rgb(0 0 0 / 20%) 0px 5px 15px !important;
+        background-color: var(--d-bg);
+    }
+    .form-control{
+        color: var(--white);
+        font-size: var(--fs-14);
+        &:focus{
+            color: var(--white);
+        }
+     
+    }
+    
+
+     .activation-card-header{
+        h2 {
+            text-transform: capitalize;
+            font-size: var(--fs-18);
+            color: var(--white);
+            font-weight: 600;
+        }
+     }
+     .main_form_box {
+        backdrop-filter: blur( 4px );
+        background: rgb(255 255 255 / 5%);
+        /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+        backdrop-filter: blur( 4px );
+        -webkit-backdrop-filter: blur( 4px );
+        border-radius: 10px;
+        /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+        padding: 20px 25px;
+    }
+.form_box{
+    label{
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+   .form-control{
+    background-color: var(--d-bg);
+    border: 1px solid var(--d-bg);
+   }
+   .btn_dream{
+    @include blue-button;
+    min-height: 40px;
+   }
+}
+
+
+    .table{
+        color: var(--white);
+        --bs-table-bg: transparent;
+        thead{
+            tr{
+                th{
+                    color: var(--grey);
+                    font-size: var(--fs-14);
+                    font-weight: 500;
+                
+                }
+            }
+        }
+        tbody{
+            tr{
+                td{
+                    color: var(--grey);
+                    font-size: var(--fs-14);
+                    font-weight: 500;
+                
+                }
+            }
+        }
+    }
+}
+
+
+
+.table>:not(caption)>*>* {
+    padding: 12px 20px !important;
+    border-bottom-width: 1px;
+    border-color: #5e505026;
+    white-space: nowrap;
+}

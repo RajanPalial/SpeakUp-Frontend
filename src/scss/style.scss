@@ -1,0 +1,15 @@
+@import "./base/base";
+@import "./pages/pages";
+
+.active_btn_logout {
+  @include blue-button;
+}
+.go_back_btn {
+  background: linear-gradient(to right, #f167f8, #702eeb);
+  color: var(--white);
+  border: 1px solid #702eeb;
+  font-size: var(--fs-14);
+  font-weight: 500;
+  min-width: 100px;
+  border-radius: 6px;
+}

@@ -1,0 +1,165 @@
+.team_tree_view {
+    li {
+        list-style: none;
+    }
+    .bg_color {
+        background: linear-gradient(to bottom right, rgb(41, 40, 40), rgb(68, 25, 70));
+    }
+    ul li {
+        padding: 0 20px;
+    }
+    .right_content {
+        padding: 30px 30px 30px;
+        transition: 0.5s ease-in-out !important;
+        min-height: calc(100vh - 176px);
+    }
+
+    .account_details .bg_color {
+        border-radius: 10px;
+    }
+    .hint_box{
+        font-size: var(--fs-14);
+        font-weight: 500;
+        span{
+            background: var(--d-bg);
+    color: var(--white);
+    height: 35px;
+    width: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.95)
+        }
+    }
+
+    .tree {
+        padding: 30px;
+        color:  var(--white);
+        font-size: var(--fs-14);
+    }
+
+    .tree_a {
+        background: var(--d-bg);
+        color:  var(--white);
+        // height: 70px;
+        // width: 70px;
+        height: 60px;
+        width: 60px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+
+        border-radius: 50%;
+        justify-content: center;
+        position: relative;
+        flex-direction: column;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.95);
+        img{
+            height: 35px;
+            margin-left: 2px;
+        }
+    }
+
+
+    ul li:last-child {
+        padding-right: 0;
+    }
+
+
+    .tree_a.tree_line svg {
+        width: 40px;
+        height: 40px;
+        color: var(--gradient);
+    }
+
+    .tree_a svg {
+        width: 28px;
+        height: 28px;
+        color: var(--gradient);
+    }
+
+
+
+    .tree_a.tree_line::after {
+        content: "";
+        position: absolute;
+        top: 117px !important;
+        width: 1px;
+        height: 37px;
+        background: var(--gradient);
+    }
+
+    .tree_a.tree_line::before {
+        position: relative;
+    }
+
+    .tree_ul li:first-child::before {
+        width: 50%;
+        left: unset;
+        right: 0;
+        border-left: 1px solid var(--gradient);
+        border-top-left-radius: 10px;
+    }
+
+    .tree_ul li:last-child::before {
+        width: 50%;
+        border-right: 1px solid var(--gradient);
+        border-top-right-radius: 10px;
+    }
+
+    .tree_ul li::before {
+        position: absolute;
+        content: '';
+        background: #a6a6a600;
+        width: 100%;
+        height: 30px;
+        top: 0;
+        left: 0;
+        border-top: 1px solid var(--gradient);
+    }
+
+    .tree_ul li {
+        min-width: 150px;
+        position: relative;
+        padding-top: 39px;
+    }
+
+    ul li:first-child::after,
+    ul li:last-child::after {
+        background: transparent;
+    }
+
+    .tree_ul li::after {
+        position: absolute;
+        content: '';
+        background: var(--gradient);
+        height: 30px;
+        width: 1px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 0;
+    }
+
+
+}
+
+
+@media (min-width:320px) and (max-width:991px) {
+    .team_tree_view {
+        ul li {
+            padding: 0 17px;
+        }
+        .tree {
+            padding: 49px 0;
+         }
+    .right_content {
+        padding: 0px 0px 0px;
+    }
+}
+}

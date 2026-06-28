@@ -1,0 +1,524 @@
+.dashboard-sec {
+  .total__team {
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1607843137);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+      rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    .name_box {
+      h6 {
+        font-size: var(--fs-15);
+      }
+      font-size: var(--fs-14);
+    }
+  }
+  .team_line {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: -20px;
+      height: 136px;
+      width: 2px;
+      background-color: var(--text-blue);
+    }
+    span {
+      font-size: var(--fs-14);
+    }
+  }
+  .total_user_icons_box {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -18px;
+      height: 2px;
+      width: 12px;
+      background-color: var(--text-blue);
+    }
+    .all_team_li {
+      width: auto;
+      border-radius: 16px;
+      padding: 5px 7px;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ecf7fd;
+      overflow: hidden;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      color: var(--black);
+      font-weight: 600;
+      font-size: var(--fs-14);
+
+      border: 2px solid var(--bg-secondary);
+      &:nth-child(2) {
+        transform: translate(-10px, 0px);
+      }
+      &:nth-child(3) {
+        transform: translate(-21px, 0px);
+      }
+      &:nth-child(4) {
+        transform: translate(-31px, 0px);
+      }
+      &:nth-child(5) {
+        transform: translate(-41px, 0px);
+      }
+      &:nth-child(6) {
+        transform: translate(-51px, 0px);
+      }
+      &:nth-child(7) {
+        transform: translate(-61px, 0px);
+      }
+      &:nth-child(8) {
+        transform: translate(-71px, 0px);
+      }
+    }
+    img {
+      // border: 2px solid var(--bg-secondary);
+      width: 30px;
+      border-radius: 50%;
+    }
+  }
+  .all_team_box {
+    font-size: var(--fs-14);
+    span {
+      height: 12px;
+      width: 12px;
+      color: var(--grey-text);
+
+      &.line_1 {
+        background-color: #4ab34c;
+      }
+      &.line_2 {
+        background-color: #21bee7;
+      }
+    }
+  }
+  .heading {
+    font-weight: 500;
+    color: var(--text-blue);
+    border-bottom: 1px solid var(--text-blue);
+    border-radius: 0;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: var(--fs-14);
+  }
+  .account__box {
+    min-height: 265px;
+  }
+  .active_box {
+    position: relative;
+    min-height: 274px;
+    &::before {
+      position: absolute;
+      content: " ";
+      top: 40px;
+      right: -30px;
+      background: url("/panel-4-admin/images/dashboard/backImage.jpg");
+      height: 201px;
+      width: 248px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    h2 {
+      color: var(--text-blue);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 27px;
+    }
+    p {
+      color: var(--white);
+      font-size: var(--fs-14);
+      span {
+        font-weight: 600;
+      }
+    }
+    .active-btn {
+      color: var(--white);
+      border: 1px solid transparent;
+      font-size: var(--fs-14);
+      font-weight: 500;
+      min-width: 100px;
+      border-radius: 6px;
+      background: #ffffff29;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    }
+  }
+  .cus_card {
+    background: var(--bg-secondary);
+    color: var(--white);
+    padding: 35px 35px;
+    box-shadow: var(--card-shadow);
+    border-radius: 7px;
+  }
+  .main_income_box {
+    background: linear-gradient(
+      to bottom right,
+      rgb(41, 40, 40),
+      rgb(68, 25, 70)
+    );
+    color: var(--white);
+    box-shadow: var(--card-shadow);
+    border-radius: 7px;
+    min-height: 274px;
+    h6 {
+      font-size: var(--fs-14);
+      color: var(--grey);
+    }
+  }
+  .income_box {
+    width: 14.28%;
+    &:last-child {
+      margin: 0 !important;
+    }
+
+    h5 {
+      color: var(--white);
+      font-size: var(--fs-15);
+      margin: 0;
+      word-break: break-word;
+    }
+    p {
+      color: var(--grey);
+      font-size: var(--fs-14);
+      font-weight: 500;
+    }
+  }
+  .income_info {
+    h4 {
+      font-size: 20px;
+    }
+  }
+  label {
+    color: var(--grey);
+    font-size: var(--fs-15);
+  }
+  .cus__box {
+    min-height: 127px;
+  }
+}
+
+.rank_box {
+  h3 {
+    font-size: 25px;
+  }
+}
+
+.price_income_box {
+  img {
+    width: 90px;
+  }
+}
+.stake_income {
+  min-height: 100px;
+}
+
+.account_address_box {
+  // background: #0d2e3d;
+  // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  // background: #ffffff29;
+  //         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  p {
+    color: var(--white);
+    font-size: var(--fs-14);
+  }
+}
+.account_address {
+  min-height: 233px;
+  label {
+    color: var(--white);
+    font-size: var(--fs-14);
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+}
+
+.user_profile {
+  span {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+    img {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      min-height: 100%;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+  }
+}
+.user_name {
+  h6 {
+    color: var(--white);
+  }
+  p {
+    color: var(--grey);
+    font-size: var(--fs-14);
+  }
+}
+
+.swap_tab {
+  .nav-pills {
+    --bs-nav-pills-border-radius: 4px;
+
+    .nav-link {
+      font-size: var(--fs-14);
+      font-weight: 500;
+      background: transparent;
+      min-width: 150px;
+      border-bottom: 1px solid transparent;
+
+      &.active {
+        color: var(--text-blue);
+        background: linear-gradient(to right, #f167f8, #702eeb);
+        border-bottom: 1px solid var(--text-blue);
+        border-radius: 0;
+      }
+    }
+  }
+
+  .form_box {
+    h6 {
+      font-size: var(--fs-13);
+      color: var(--grey);
+      span {
+        color: var(--text-blue);
+      }
+    }
+    label {
+      color: var(--white);
+      font-size: var(--fs-14);
+      font-weight: 500;
+      margin-bottom: 5px;
+      span {
+        color: var(--text-blue);
+        font-size: var(--fs-13);
+      }
+    }
+    ::placeholder {
+      color: var(--grey-text);
+    }
+
+    .drop_btn {
+      min-height: 40px;
+      font-size: var(--fs-14);
+      color: var(--white);
+      background-color: var(--d-bg);
+      border: 1px solid var(--d-bg);
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+        rgba(0, 0, 0, 0.24) 0px 1px 2px;
+      padding: 0.375rem 0.75rem;
+    }
+    .dropdown-menu {
+      background-color: var(--d-bg);
+      border: 1px solid var(--d-bg);
+      border-radius: 4px;
+      width: 100%;
+      font-weight: 500;
+      li {
+        padding: 0.375rem 0.75rem;
+        font-size: var(--fs-12);
+        color: var(--grey);
+        &:hover {
+          color: var(--white);
+          background-color: var(--ref-bg);
+        }
+      }
+    }
+
+    .form-control {
+      min-height: 40px;
+      font-size: var(--fs-14);
+      color: var(--white);
+      background-color: var(--d-bg);
+      border: 1px solid var(--d-bg);
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+        rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    }
+
+    .active_btn {
+      @include blue-button;
+    }
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1620px) {
+  .dashboard-sec {
+    .active_box {
+      &::before {
+        top: unset;
+        right: -27px;
+        height: 221px;
+        width: 253px;
+        bottom: -29px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1400px) and (max-width: 1570px) {
+  .dashboard-sec {
+    .cus__box {
+      min-height: 118px;
+    }
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1575px) {
+  .price_income_box img {
+    width: 60px !important;
+  }
+  .dashboard-sec {
+    .my__team {
+      min-height: 275px;
+    }
+    .total_user_icons_box {
+      li {
+        width: 23px;
+        height: 23px;
+      }
+      img {
+        width: 19px;
+      }
+    }
+    .main_income_box {
+      h6 {
+        font-size: var(--fs-12);
+      }
+    }
+    .income_info {
+      h4 {
+        font-size: 15px;
+      }
+    }
+    .rank_box h3 {
+      font-size: 15px;
+    }
+    .active_box {
+      &::before {
+        width: 235px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  .price_income_box img {
+    width: 60px !important;
+  }
+  .dashboard-sec {
+    .my__team {
+      min-height: 383px;
+    }
+    .main_income_box {
+      h6 {
+        font-size: var(--fs-12);
+      }
+    }
+    .income_info {
+      h4 {
+        font-size: 15px;
+      }
+    }
+    .rank_box h3 {
+      font-size: 15px;
+    }
+    .active_box {
+      &::before {
+        width: 235px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .dashboard-sec {
+    // .cus__box {
+    //     min-height: 118px;
+    // }
+    .my__team {
+      min-height: 383px;
+    }
+    .total-directs {
+      img {
+        width: 40px !important;
+      }
+    }
+  }
+  .main_income_box{
+    .income_box{
+      width: 25%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .dashboard-sec {
+    // .cus__box {
+    //     min-height: 118px;
+    // }
+    .active_box {
+      &::before {
+        top: unset;
+        right: -27px;
+        height: 221px;
+        width: 253px;
+        bottom: -29px;
+      }
+    }
+  }
+  .main_income_box{
+    .income_box{
+      width: 33.33%;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .dashboard-sec {
+    .active_box {
+      &::before {
+        display: none;
+      }
+    }
+    .cus_card {
+      padding: 15px 15px;
+    }
+    .total_user_icons_box {
+      li {
+        width: 23px;
+        height: 23px;
+      }
+      img {
+        width: 19px;
+      }
+    }
+  }
+.main_income_box{
+  .income_box{
+    width: 50%;
+  }
+}
+  .user_profile {
+    span {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .user_name {
+    h6 {
+      font-size: var(--fs-14);
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+}
