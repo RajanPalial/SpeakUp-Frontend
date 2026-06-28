@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     host: true,
   },
-  base: "/panel-4-admin/",
+  base: "/",
   resolve: {
     alias: {
       buffer: "rollup-plugin-node-polyfills/polyfills/buffer-es6",
