@@ -56,7 +56,7 @@ const WithdrawReport = () => {
         if (!response.ok) {
           if (response.status === 401) {
             localStorage.removeItem("token");
-            navigate("/");
+            navigate("/login");
           }
           throw new Error("Network response was not ok");
         }
@@ -256,7 +256,7 @@ const WithdrawReport = () => {
     //     if (response.status === 401) {
     //       alert("INVALID TXNN.....!!!!!!!!");
     //       // localStorage.removeItem("token");
-    //       // navigate("/");
+    //       // navigate("/login");
     //     }
     //     throw new Error("Network response was not ok");
     //   }

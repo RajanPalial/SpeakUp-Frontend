@@ -51,7 +51,7 @@ export default function AppRoutes() {
           }
         />
         <Route
-          path="/"
+          path="/login"
           element={
             <Suspense fallback={<Loader />}>
               <Login />

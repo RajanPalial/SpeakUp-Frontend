@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
-
 const Header = ({ active, setActive, hoverShow }) => {
   const [hidden, setHidden] = useState(false);
   const navigate = useNavigate();
+  
   const toggleNavbar = () => {
     setHidden(!hidden);
   };
@@ -14,21 +14,53 @@ const Header = ({ active, setActive, hoverShow }) => {
     const menuToggle = document.getElementById("navbarSupportedContent");
     menuToggle.classList.remove("show");
   };
-  const handleOnClick = () => {
-    localStorage.clear("token");
-    window.location.reload();
-    navigate("/");
+const baseurl = import.meta.env.VITE_API_BASE_URL
+  const handleOnClick = async () => {
+    try {
+      // Get token from localStorage
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        console.warn("No token found");
+        localStorage.clear();
+        navigate("/login");
+        return;
+      }
+
+      // Make logout API call
+      const response = await fetch(
+        `${baseurl}/api/auth/logout`,
+        {
+          method: "DELETE",
+          headers: {
+            "Authorization": `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Logout failed: ${response.statusText}`);
+      }
+
+      // Clear localStorage and redirect on success
+      localStorage.clear();
+      navigate("/login");
+      window.location.reload();
+    } catch (error) {
+      console.error("Logout error:", error);
+      // Still clear data and redirect even if API fails
+      localStorage.clear();
+      navigate("/login");
+      window.location.reload();
+    }
   };
+
   return (
     <div>
       <div className="d_header d-flex justify-content-between bg-dark">
         <div className="left_header d-flex align-items-center ">
           <div className="logo transition">
-            {/* <img
-              src="images/logo.png"
-              alt="logo"
-              style={active ? { maxHeight: "35px" } : { maxHeight: "45px" }}
-            /> */}
             <h2 className="text-light mb-0">SpeakUp</h2>
           </div>
           <button
@@ -45,16 +77,7 @@ const Header = ({ active, setActive, hoverShow }) => {
         </div>
 
         <div className="profile_box d-flex align-items-center gap-3">
-          <div className="user_name">
-            {/* <h6 className="text-capitalize mb-0">Demo name</h6> */}
-            {/* <p className="mb-0">demo@gmail.com</p> */}
-          </div>
-
-          {/* <div className="user_profile">
-            <span className="d-flex">
-              <img src="images/logo.png" alt="user-icon" />
-            </span>
-          </div> */}
+          <div className="user_name"></div>
 
           <div className="dropdown">
             <button
