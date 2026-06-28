@@ -3,10 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "/panel-4-admin",
+  "homepage": "/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/panel-4-admin/",
+    "build": "vite build --base=/",
     "preview": "vite preview"
   },
   "dependencies": {
