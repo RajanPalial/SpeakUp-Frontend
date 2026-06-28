@@ -16,7 +16,7 @@ import { AuthProvider } from "./context/AuthProvider";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AuthProvider>
-    <BrowserRouter basename="/panel-4-admin">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </AuthProvider>
