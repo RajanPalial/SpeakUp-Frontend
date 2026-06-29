@@ -779,7 +779,7 @@ const UserTicketView = () => {
   const generateOtp = async () => {
     try {
       setOtpLoading(true);
-      const res = await axios.post("/student/generate-otp", {}, { headers });
+      const res = await axios.post("/student/generate-otp", { email: profile?.email }, { headers });
       if (res.data.status === 1) {
         setStep(STEP.OTP_SENT);
         showToast(res.data.message || "OTP sent to your registered contact.");
